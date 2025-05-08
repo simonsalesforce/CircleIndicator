@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- built by Simon des Forges -->
+
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+  <apiVersion>60.0</apiVersion>
+  <isExposed>true</isExposed>
+  <targets>
+    <target>lightning__FlowScreen</target>
+  </targets>
+  <targetConfigs>
+    <targetConfig targets="lightning__FlowScreen">
+
+      <property name="circleLabels" type="String" label="Circle Labels"
+        description="A comma separated string of labels to show inside the circles" />
+
+      <property name="circleCounts" type="String" label="Circle Counts"
+        description="A comma separated string of numbers or count values" />
+
+      <property name="visibilityKeys" type="String" label="Visibility Keys"
+        description="A comma separated string of words used for component visibility" />
+
+      <property name="defaultSelectedKey" type="String" label="Default Selected Key"
+        description="Optional: the visibility key to select by default when the component loads" />
+
+      <property name="selectedKey" type="String" label="Selected Visibility Key" role="outputOnly"
+        description="The visibility key of the selected circle (returned to Flow). This is case-sensitive and must match exactly for Flow visibility filters." />
+
+      <property name="enablePulse" type="Boolean" label="Enable Pulse Animation"
+        description="When true (default), circles with counts will pulse to draw attention. Set to false to disable this effect." />
+
+    </targetConfig>
+  </targetConfigs>
+</LightningComponentBundle>

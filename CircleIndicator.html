@@ -1,0 +1,16 @@
+<template>
+    <div class="selector-container">
+      <template for:each={circles} for:item="circle">
+        <div 
+          key={circle.key}
+          data-key={circle.key}
+          class={circle.class}
+          onclick={handleCircleClick}
+        >
+          <div class="count">{circle.count}</div>
+          <div class="label">{circle.label}</div>
+        </div>
+      </template>
+    </div>
+  </template>
+  
