@@ -1,16 +1,25 @@
 <template>
-    <div class="selector-container">
-      <template for:each={circles} for:item="circle">
-        <div 
-          key={circle.key}
-          data-key={circle.key}
-          class={circle.class}
-          onclick={handleCircleClick}
-        >
-          <div class="count">{circle.count}</div>
-          <div class="label">{circle.label}</div>
+  <div class="circle-container">
+    <template for:each={circles} for:item="circle">
+      <div
+        key={circle.key}
+        class="circle-wrapper"
+        data-key={circle.key}
+        onclick={handleCircleClick}
+      >
+        <template if:true={circle.isSelected}>
+          <div class="selected-label">Currently viewing</div>
+        </template>
+
+        <div class={circle.class}>
+          <div class="circle-count">{circle.count}</div>
+          <div class="circle-label">{circle.label}</div>
         </div>
-      </template>
-    </div>
-  </template>
-  
+
+        <template if:true={circle.showActionNeeded}>
+          <div class="action-needed-label">Action needed</div>
+        </template>
+      </div>
+    </template>
+  </div>
+</template>
